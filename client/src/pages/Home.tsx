@@ -23,39 +23,44 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-        {/* Abstract Background Shapes */}
-        <div className="absolute inset-0 z-0 bg-background">
-          <div className="absolute top-0 right-0 w-2/3 h-full bg-primary/5 -skew-x-12 translate-x-1/4" />
-          <div className="absolute bottom-0 left-0 w-1/3 h-2/3 bg-secondary/5 rounded-tr-[100px]" />
+      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-primary">
+        {/* Farmer Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=1600&q=80" 
+            alt="Farmer in field" 
+            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
         </div>
 
         {/* Content */}
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-12 max-w-4xl"
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 text-accent-foreground font-semibold text-sm border border-accent/20">
-              <span className="w-2 h-2 rounded-full bg-accent mr-2 animate-pulse" />
+            <div className="inline-flex items-center px-6 py-3 rounded-none bg-white text-primary font-black text-xs border-l-8 border-accent uppercase tracking-[0.3em] shadow-2xl">
+              <span className="w-2 h-2 rounded-full bg-accent mr-3 animate-pulse" />
               Revolutionizing Agriculture
             </div>
             
-            <h1 className="text-6xl lg:text-8xl font-display font-black leading-[1.1] tracking-tight text-foreground">
-              Nurturing Soil, <br/> <span className="text-primary italic">Growing Life.</span>
+            <h1 className="text-7xl lg:text-[11rem] font-display font-black leading-[0.8] tracking-[-0.06em] text-white uppercase relative">
+              Nurturing Soil, <br/> 
+              <span className="text-accent italic impact-underline">Growing Life.</span>
             </h1>
             
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-xl text-white/80 leading-relaxed max-w-2xl font-medium">
               Shivmukha Bio Fertilizers brings you the next generation of organic soil solutions. 
               Sustainable, potent, and rooted in nature.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-6 pt-6">
               <Button 
                 size="lg" 
-                className="rounded-full bg-primary hover:bg-primary/90 text-lg px-10 py-7"
+                className="rounded-none bg-accent hover:bg-white hover:text-primary text-white font-black text-sm px-12 py-8 uppercase tracking-widest transition-all duration-300"
                 onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Explore Products
@@ -63,50 +68,12 @@ export default function Home() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="rounded-full border-2 text-lg px-10 py-7 flex items-center gap-2"
+                className="rounded-none border-2 border-white/20 text-white font-black text-sm px-12 py-8 uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-300"
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Learn More <ArrowRight className="w-5 h-5" />
+                Learn More
               </Button>
             </div>
-            
-            <div className="pt-8 flex items-center gap-8 text-sm font-medium text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span>Premium Quality</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span>Eco-Friendly</span>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:block"
-          >
-            {/* Main Hero Image */}
-            <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/20 border-4 border-white">
-              {/* farm field green plants close up */}
-              <img 
-                src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&q=80" 
-                alt="Healthy Crops"
-                className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            
-            {/* Floating Badge */}
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -bottom-10 -left-10 z-20 bg-white p-6 rounded-2xl shadow-xl border border-border max-w-[200px]"
-            >
-              <div className="text-4xl font-bold text-primary font-display mb-1">100%</div>
-              <div className="text-sm text-muted-foreground font-medium">Natural & Organic Ingredients</div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -203,24 +170,23 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
-        {/* Background Texture */}
-        <div className="absolute inset-0 opacity-10" 
-             style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} 
-        />
+      <section className="py-32 bg-primary text-primary-foreground relative overflow-hidden">
+        {/* Decorative Background */}
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?w=1600&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary" />
         
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-display">Ready to Boost Your Yield?</h2>
-          <p className="text-primary-foreground/80 text-lg mb-10 max-w-2xl mx-auto">
-            Contact us today to learn more about our products and how we can help you achieve sustainable growth.
+          <span className="inline-block px-4 py-1 bg-accent text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8">Get In Touch</span>
+          <h2 className="text-5xl md:text-7xl font-black mb-8 font-display uppercase leading-tight tracking-tighter">Ready to Boost <br/> Your Yield?</h2>
+          <p className="text-primary-foreground/70 text-xl mb-12 max-w-2xl mx-auto font-medium italic">
+            "The soil is the great connector of lives, the source and destination of all."
           </p>
           <Button 
             size="lg" 
-            variant="secondary" 
-            className="rounded-full text-primary font-bold text-lg px-8 py-6 shadow-xl"
+            className="rounded-none bg-accent hover:bg-white hover:text-primary text-white font-black text-sm px-16 py-8 uppercase tracking-[0.2em] shadow-2xl transition-all duration-300"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Get in Touch
+            Contact Our Team
           </Button>
         </div>
       </section>

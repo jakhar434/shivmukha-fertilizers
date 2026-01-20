@@ -9,13 +9,13 @@
   --font-display: 'Outfit', sans-serif;
 
   /* Earthy & Agricultural Palette - Refined Eco-Luxury */
-  --primary: 158 45% 15%; /* Dark Forest Green */
+  --primary: 158 45% 12%; /* Deeper Forest Green */
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 28 30% 25%; /* Deep Earth */
+  --secondary: 28 30% 20%; /* Deeper Earth */
   --secondary-foreground: 0 0% 100%;
 
-  --accent: 142 60% 40%; /* Vibrant Growth Green */
+  --accent: 142 70% 35%; /* Richer Growth Green */
   --accent-foreground: 0 0% 100%;
 
   --background: 40 10% 98%; /* Clean Ivory */

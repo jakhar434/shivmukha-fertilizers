@@ -30,16 +30,16 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
-              <Leaf className="w-6 h-6" />
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="w-12 h-12 rounded-full bg-white border border-border flex items-center justify-center overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-300">
+              <img src="/images/logo.png" alt="Shivmukha Logo" className="w-10 h-10 object-contain" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-bold text-xl leading-none text-foreground">
+              <span className="font-display font-black text-2xl leading-none text-primary tracking-tighter uppercase">
                 Shivmukha
               </span>
-              <span className="text-xs text-muted-foreground font-medium tracking-wider">
-                BIO FERTILIZERS
+              <span className="text-[10px] text-accent font-black tracking-[0.3em] uppercase">
+                Bio Fertilizers
               </span>
             </div>
           </Link>

@@ -23,9 +23,11 @@ export function ProductCard({ product, index }: ProductCardProps) {
           alt={product.name}
           className="w-full h-full object-contain relative z-10 transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute top-6 right-6 bg-primary text-white px-3 py-1 text-[10px] font-black tracking-widest uppercase">
-          {product.weight}
-        </div>
+        {product.weight && (
+          <div className="absolute top-6 right-6 bg-primary text-white px-3 py-1 text-[10px] font-black tracking-widest uppercase">
+            {product.weight}
+          </div>
+        )}
       </div>
       
       <div className="p-8">
