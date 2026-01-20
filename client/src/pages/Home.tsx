@@ -43,8 +43,8 @@ export default function Home() {
               Revolutionizing Agriculture
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-display font-bold leading-tight text-foreground">
-              Cultivating a <span className="text-primary">Greener</span> Future
+            <h1 className="text-7xl lg:text-[10rem] font-display font-black leading-[0.8] tracking-[ -0.05em] text-foreground uppercase">
+              Pure <br/> <span className="text-primary">Bio</span> <br/> Power
             </h1>
             
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">

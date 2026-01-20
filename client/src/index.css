@@ -8,51 +8,61 @@
   --font-body: 'DM Sans', sans-serif;
   --font-display: 'Outfit', sans-serif;
 
-  /* Earthy & Agricultural Palette */
-  /* Primary: Deep Forest Green */
-  --primary: 142 76% 36%;
+  /* Earthy & Agricultural Palette - Refined Eco-Luxury */
+  --primary: 158 45% 15%; /* Dark Forest Green */
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Rich Earth/Soil */
-  --secondary: 28 45% 45%;
+  --secondary: 28 30% 25%; /* Deep Earth */
   --secondary-foreground: 0 0% 100%;
 
-  /* Accent: Fresh Leaf/Growth */
-  --accent: 85 65% 45%;
+  --accent: 142 60% 40%; /* Vibrant Growth Green */
   --accent-foreground: 0 0% 100%;
 
-  /* Backgrounds: Warm Cream/Off-white */
-  --background: 40 25% 98%;
-  --foreground: 140 20% 20%;
+  --background: 40 10% 98%; /* Clean Ivory */
+  --foreground: 160 20% 10%;
 
-  /* Cards: White with slight warmth */
   --card: 0 0% 100%;
-  --card-foreground: 140 20% 20%;
+  --card-foreground: 160 20% 10%;
   
-  /* Borders: Soft Earth */
-  --border: 140 10% 90%;
-  --input: 140 10% 90%;
+  --border: 160 10% 90%;
+  --input: 160 10% 88%;
   
-  /* UI Elements */
-  --muted: 140 10% 96%;
-  --muted-foreground: 140 10% 45%;
+  --muted: 160 10% 96%;
+  --muted-foreground: 160 10% 35%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
 
-  --ring: 142 76% 36%;
-  --radius: 0.75rem;
+  --ring: 158 45% 15%;
+  --radius: 0.375rem;
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/20;
+    @apply bg-background text-foreground antialiased selection:bg-primary/10;
     font-family: var(--font-body);
+    line-height: 1.7;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-bold tracking-tight text-primary;
+    @apply font-black tracking-tighter text-primary uppercase;
+  }
+  
+  .impact-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .impact-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2em;
+    background: hsl(var(--accent));
+    z-index: -1;
+    transform: skew(-10deg);
   }
 }
 

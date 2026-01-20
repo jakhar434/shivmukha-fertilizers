@@ -20,15 +20,15 @@ export class MemStorage implements IStorage {
 
   private seedData() {
     const productsList: InsertProduct[] = [
-      { name: "Shakti Gold", description: "Tillering Booster", weight: "7kg", image: "/attached_assets/01_1768937653508.pdf" },
-      { name: "Samrat", description: "Phosphate Rich Organic Manure (PROM)", weight: "50kg", image: "/attached_assets/01_1768937653508.pdf" },
-      { name: "Chetak", description: "CMS Granules - Fertilizer", weight: "50kg", image: "/attached_assets/01_1768937653508.pdf" },
-      { name: "Shakti", description: "Potash Derived from Molasses", weight: "50kg", image: "/attached_assets/01_1768937653508.pdf" },
-      { name: "Powar Gro-G", description: "Organic Manure - Seaweed Extract Granules", weight: "10kg", image: "/attached_assets/01_1768937653508.pdf" },
-      { name: "Trishul", description: "Tillering Booster - Control over borers", weight: "4kg", image: "/attached_assets/01_1768937653508.pdf" },
-      { name: "Root Mex", description: "Mycorrhizal Bio Fertilizer", weight: "10kg", image: "/attached_assets/01_1768937653508.pdf" },
-      { name: "Powar Gro-L", description: "Eco Friendly Foliar Spray", weight: "1Ltr", image: "/attached_assets/01_1768937653508.pdf" },
-      { name: "PSB", description: "Crop Care", weight: "N/A", image: "/attached_assets/01_1768937653508.pdf" }
+      { name: "Shakti Gold", description: "Tillering Booster", weight: "7kg", image: "/images/prod-01.png" },
+      { name: "Samrat", description: "Phosphate Rich Organic Manure (PROM)", weight: "02.png", image: "/images/prod-02.png" },
+      { name: "Chetak", description: "CMS Granules - Fertilizer", weight: "50kg", image: "/images/prod-03.png" },
+      { name: "Shakti", description: "Potash Derived from Molasses", weight: "50kg", image: "/images/prod-04.png" },
+      { name: "Powar Gro-G", description: "Organic Manure - Seaweed Extract Granules", weight: "10kg", image: "/images/prod-05.png" },
+      { name: "Trishul", description: "Tillering Booster - Control over borers", weight: "4kg", image: "/images/prod-06.png" },
+      { name: "Root Mex", description: "Mycorrhizal Bio Fertilizer", weight: "10kg", image: "/images/prod-07.png" },
+      { name: "Powar Gro-L", description: "Eco Friendly Foliar Spray", weight: "1Ltr", image: "/images/prod-09.png" },
+      { name: "PSB", description: "Crop Care", weight: "N/A", image: "/images/prod-10.png" }
     ];
 
     const teamList: InsertTeamMember[] = [
