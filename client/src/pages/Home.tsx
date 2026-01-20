@@ -53,10 +53,19 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-lg px-10 py-7">
+              <Button 
+                size="lg" 
+                className="rounded-full bg-primary hover:bg-primary/90 text-lg px-10 py-7"
+                onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Explore Products
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full border-2 text-lg px-10 py-7 flex items-center gap-2">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="rounded-full border-2 text-lg px-10 py-7 flex items-center gap-2"
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Learn More <ArrowRight className="w-5 h-5" />
               </Button>
             </div>
