@@ -23,7 +23,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-primary">
+      <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-primary">
         {/* Farmer Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -63,7 +63,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 pt-6">
+            <div className="flex flex-col sm:flex-row gap-6 pt-6 mb-12">
               <Button 
                 size="lg" 
                 className="rounded-none bg-accent hover:bg-white hover:text-primary text-white font-black text-sm px-12 py-8 uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(var(--accent),0.3)] transition-all duration-500 group relative overflow-hidden"
@@ -88,7 +88,7 @@ export default function Home() {
       </section>
 
       {/* About / Vision Section */}
-      <section className="py-24 bg-white relative">
+      <section id="about" className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Vision & Mission</h2>
@@ -209,7 +209,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary text-primary-foreground relative overflow-hidden">
+      <section id="contact" className="py-16 bg-primary text-primary-foreground relative overflow-hidden">
         {/* Decorative Background */}
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?w=1600&q=80')] bg-cover bg-center opacity-5 mix-blend-overlay" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/90 to-primary" />

@@ -8,20 +8,20 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "#about" },
-    { name: "Benefits", href: "#why-us" },
-    { name: "Products", href: "#products" },
-    { name: "Team", href: "#team" },
+    { name: "Home", href: "home" },
+    { name: "About", href: "about" },
+    { name: "Benefits", href: "why-us" },
+    { name: "Products", href: "products" },
+    { name: "Team", href: "team" },
   ];
 
   const scrollToSection = (id: string) => {
     setIsOpen(false);
-    if (id === "/") {
+    if (id === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-    const element = document.querySelector(id);
+    const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -57,7 +57,7 @@ export function Navbar() {
               </button>
             ))}
             <Button 
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => scrollToSection("contact")}
               className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25 rounded-full px-6"
             >
               Contact Us
@@ -97,7 +97,7 @@ export function Navbar() {
               ))}
               <div className="pt-4 px-4">
                 <Button 
-                  onClick={() => scrollToSection("#contact")}
+                  onClick={() => scrollToSection("contact")}
                   className="w-full bg-primary hover:bg-primary/90 rounded-full"
                 >
                   Contact Us
