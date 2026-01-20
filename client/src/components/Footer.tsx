@@ -1,0 +1,75 @@
+import { Leaf, Phone, MapPin, Mail, ArrowRight } from "lucide-react";
+
+export function Footer() {
+  return (
+    <footer id="contact" className="bg-foreground text-white pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+          {/* Brand Column */}
+          <div className="space-y-6">
+            <div className="flex items-center space-x-2">
+              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                <Leaf className="w-6 h-6" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-display font-bold text-xl leading-none text-white">
+                  Shivmukha
+                </span>
+                <span className="text-xs text-white/60 font-medium tracking-wider">
+                  BIO FERTILIZERS
+                </span>
+              </div>
+            </div>
+            <p className="text-white/70 leading-relaxed max-w-sm">
+              Enhancing soil health and crop productivity through sustainable, 
+              high-quality organic solutions. ISO 9001-2015 Certified.
+            </p>
+          </div>
+
+          {/* Quick Links (Visual Only) */}
+          <div className="space-y-6">
+            <h4 className="text-white font-display text-lg">Company</h4>
+            <ul className="space-y-4">
+              {['Home', 'About Us', 'Products', 'Team'].map((item) => (
+                <li key={item}>
+                  <a href={`#${item.toLowerCase().replace(' ', '')}`} className="text-white/70 hover:text-primary transition-colors flex items-center group">
+                    <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <h4 className="text-white font-display text-lg">Contact Us</h4>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3 text-white/70">
+                <MapPin className="w-5 h-5 mt-1 text-primary shrink-0" />
+                <p>
+                  Shop No.7, 1st Block, Mansi Market, 
+                  Bhorki Road, Near Government Hospital, 
+                  Gudha Gorji, Todi, Jhunjhunu, 
+                  Rajasthan, 333022
+                </p>
+              </div>
+              <div className="flex items-center space-x-3 text-white/70">
+                <Phone className="w-5 h-5 text-primary shrink-0" />
+                <p>+91-90572 36869</p>
+              </div>
+              <div className="flex items-center space-x-3 text-white/70">
+                <Mail className="w-5 h-5 text-primary shrink-0" />
+                <p>info@shivmukhabio.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-white/10 pt-8 text-center text-white/40 text-sm">
+          <p>&copy; {new Date().getFullYear()} Shivmukha Bio Fertilizers Pvt. Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
