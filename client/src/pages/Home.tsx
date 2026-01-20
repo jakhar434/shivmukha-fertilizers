@@ -43,21 +43,21 @@ export default function Home() {
               Revolutionizing Agriculture
             </div>
             
-            <h1 className="text-7xl lg:text-[10rem] font-display font-black leading-[0.8] tracking-[ -0.05em] text-foreground uppercase">
-              Pure <br/> <span className="text-primary">Bio</span> <br/> Power
+            <h1 className="text-6xl lg:text-8xl font-display font-black leading-[1.1] tracking-tight text-foreground">
+              Nurturing Soil, <br/> <span className="text-primary italic">Growing Life.</span>
             </h1>
             
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Shivmukha Bio Fertilizers provides premium organic solutions to enhance soil health 
-              and crop productivity, ensuring sustainable farming for generations to come.
+              Shivmukha Bio Fertilizers brings you the next generation of organic soil solutions. 
+              Sustainable, potent, and rooted in nature.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-lg px-8 py-6 shadow-xl shadow-primary/20">
+              <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-lg px-10 py-7">
                 Explore Products
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full border-2 text-lg px-8 py-6 hover:bg-muted/50">
-                Contact Us
+              <Button size="lg" variant="outline" className="rounded-full border-2 text-lg px-10 py-7 flex items-center gap-2">
+                Learn More <ArrowRight className="w-5 h-5" />
               </Button>
             </div>
             

@@ -32,8 +32,8 @@ export class MemStorage implements IStorage {
     ];
 
     const teamList: InsertTeamMember[] = [
-      { name: "Hira Ram", role: "Director", image: "https://placehold.co/400x400?text=HR" },
-      { name: "Ramvilash Jat", role: "Director", image: "https://placehold.co/400x400?text=RJ" }
+      { name: "Hira Ram", role: "Director", image: "/images/team/hira_ram.png" },
+      { name: "Ramvilash Jat", role: "Director", image: "/images/team/ramvilash_jat.png" }
     ];
 
     productsList.forEach(p => {
