@@ -5,7 +5,7 @@ import { TeamCard } from "@/components/TeamCard";
 import { useProducts } from "@/hooks/use-products";
 import { useTeam } from "@/hooks/use-team";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Sprout, ShieldCheck, Sun } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sprout, ShieldCheck, Sun, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -27,11 +27,11 @@ export default function Home() {
         {/* Farmer Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=1600&q=80" 
-            alt="Farmer in field" 
-            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+            src="https://images.unsplash.com/photo-1594489428504-5c0c480a15fd?w=1600&q=80" 
+            alt="Farmers in lush green field" 
+            className="w-full h-full object-cover opacity-60 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" />
         </div>
 
         {/* Content */}
@@ -42,20 +42,26 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="space-y-12 max-w-4xl"
           >
-            <div className="inline-flex items-center px-6 py-3 rounded-none bg-white text-primary font-black text-xs border-l-8 border-accent uppercase tracking-[0.3em] shadow-2xl">
-              <span className="w-2 h-2 rounded-full bg-accent mr-3 animate-pulse" />
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent text-white font-black text-[9px] uppercase tracking-[0.4em] shadow-lg shadow-accent/20 border border-white/20">
+              <span className="w-1.5 h-1.5 rounded-full bg-white mr-2 animate-pulse" />
               Revolutionizing Agriculture
             </div>
             
-            <h1 className="text-7xl lg:text-[11rem] font-display font-black leading-[0.8] tracking-[-0.06em] text-white uppercase relative">
+            <h1 className="text-5xl lg:text-7xl font-display font-black leading-[1] tracking-tighter text-white uppercase relative">
               Nurturing Soil, <br/> 
-              <span className="text-accent italic impact-underline">Growing Life.</span>
+              <span className="text-accent italic">Growing Life.</span>
             </h1>
             
-            <p className="text-xl text-white/80 leading-relaxed max-w-2xl font-medium">
-              Shivmukha Bio Fertilizers brings you the next generation of organic soil solutions. 
-              Sustainable, potent, and rooted in nature.
-            </p>
+            <div className="space-y-6 max-w-2xl">
+              <p className="text-lg text-white/90 leading-relaxed font-medium">
+                Shivmukha Bio Fertilizers brings you the next generation of organic soil solutions. 
+                Sustainable, potent, and rooted in nature.
+              </p>
+              <p className="text-sm text-white/60 leading-relaxed">
+                Our mission is to empower farmers with science-backed organic fertilizers that 
+                restore soil vitality and maximize harvest quality without compromising the environment.
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-6 pt-6">
               <Button 
@@ -139,6 +145,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Choose Us Section */}
+      <section className="py-24 bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="aspect-square rounded-none overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&q=80" 
+                  alt="Organic farming details" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-accent p-8 text-white hidden md:block">
+                <div className="text-4xl font-black mb-2">15+</div>
+                <div className="text-xs font-black uppercase tracking-widest leading-tight">Years of Agricultural Excellence</div>
+              </div>
+            </div>
+            
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <span className="text-accent font-black text-[10px] uppercase tracking-[0.3em]">Our Competitive Edge</span>
+                <h2 className="text-4xl md:text-5xl font-black leading-tight">Why Farmers Trust <br/> Shivmukha</h2>
+              </div>
+              
+              <div className="space-y-6">
+                {[
+                  { title: "Bio-Fertility Solutions", desc: "Our products are engineered to restore the natural microbiome of your soil." },
+                  { title: "Sustainable Growth", desc: "We focus on long-term agricultural health rather than short-term chemical boosts." },
+                  { title: "Expert Support", desc: "Access to our team of agricultural scientists for personalized crop management." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6 p-6 border border-border hover:border-accent transition-colors">
+                    <div className="w-12 h-12 bg-primary/5 flex items-center justify-center text-primary shrink-0">
+                      <ShieldCheck className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-black uppercase text-sm tracking-tight mb-1">{item.title}</h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section id="team" className="py-24 bg-white relative overflow-hidden">
         {/* Decorative pattern */}
@@ -172,22 +224,46 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-32 bg-primary text-primary-foreground relative overflow-hidden">
         {/* Decorative Background */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?w=1600&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?w=1600&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/90 to-primary" />
         
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <span className="inline-block px-4 py-1 bg-accent text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8">Get In Touch</span>
-          <h2 className="text-5xl md:text-7xl font-black mb-8 font-display uppercase leading-tight tracking-tighter">Ready to Boost <br/> Your Yield?</h2>
-          <p className="text-primary-foreground/70 text-xl mb-12 max-w-2xl mx-auto font-medium italic">
-            "The soil is the great connector of lives, the source and destination of all."
-          </p>
-          <Button 
-            size="lg" 
-            className="rounded-none bg-accent hover:bg-white hover:text-primary text-white font-black text-sm px-16 py-8 uppercase tracking-[0.2em] shadow-2xl transition-all duration-300"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Contact Our Team
-          </Button>
+        <div className="max-w-5xl mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="inline-block px-4 py-1 bg-accent text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8">Get In Touch</span>
+            <h2 className="text-4xl md:text-6xl font-black mb-8 font-display uppercase leading-tight tracking-tighter">Ready to Boost <br/> Your Yield?</h2>
+            <div className="space-y-6 text-primary-foreground/70">
+              <p className="text-lg font-medium italic">
+                "The soil is the great connector of lives, the source and destination of all."
+              </p>
+              <p className="text-sm leading-relaxed max-w-md">
+                Join thousands of successful farmers who have transitioned to Shivmukha's 
+                organic solutions. Our team of experts is ready to assist you in 
+                optimizing your crop cycle for maximum profitability and health.
+              </p>
+            </div>
+          </div>
+          
+          <div className="bg-white/5 backdrop-blur-xl p-10 border border-white/10 rounded-none shadow-2xl">
+            <h3 className="text-2xl font-black mb-6 uppercase tracking-tight">Direct Support</h3>
+            <div className="space-y-8">
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 bg-accent/20 rounded-none flex items-center justify-center text-accent">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-widest text-white/40 mb-1">Call Us Directly</div>
+                  <div className="text-2xl font-black">+91-90572 36869</div>
+                </div>
+              </div>
+              <Button 
+                size="lg" 
+                className="w-full rounded-none bg-accent hover:bg-white hover:text-primary text-white font-black text-sm py-8 uppercase tracking-[0.2em] shadow-2xl transition-all duration-300"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Contact Our Team
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
