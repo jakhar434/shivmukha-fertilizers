@@ -23,7 +23,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-primary">
+      <section id="home" className="relative min-h-screen flex items-center pt-20 pb-32 overflow-hidden bg-primary">
         {/* Farmer Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -63,7 +63,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 pt-6 mb-12">
+            <div className="flex flex-col sm:flex-row gap-6 pt-6 mb-24">
               <Button 
                 size="lg" 
                 className="rounded-none bg-accent hover:bg-white hover:text-primary text-white font-black text-sm px-12 py-8 uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(var(--accent),0.3)] transition-all duration-500 group relative overflow-hidden"
@@ -77,7 +77,7 @@ export default function Home() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="rounded-none border-2 border-white/40 text-white font-black text-sm px-12 py-8 uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-all duration-500 backdrop-blur-sm"
+                className="rounded-none border-2 border-white/80 text-white font-black text-sm px-12 py-8 uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-all duration-500 bg-black/40 backdrop-blur-xl"
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Learn More
