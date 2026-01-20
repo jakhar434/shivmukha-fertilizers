@@ -43,7 +43,9 @@ export function ProductCard({ product, index }: ProductCardProps) {
             <Sprout className="w-3 h-3 mr-2" />
             Bio-Certified
           </div>
-          <ArrowRight className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="flex items-center gap-2 text-accent font-black text-[10px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300">
+            View Details <ArrowRight className="w-3 h-3" />
+          </div>
         </div>
       </div>
     </motion.div>

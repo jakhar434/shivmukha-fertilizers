@@ -27,11 +27,11 @@ export default function Home() {
         {/* Farmer Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1594489428504-5c0c480a15fd?w=1600&q=80" 
-            alt="Farmers in lush green field" 
-            className="w-full h-full object-cover opacity-60 mix-blend-overlay"
+            src="https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=1600&q=80" 
+            alt="Professional farmer inspecting crops with bio-organic solution" 
+            className="w-full h-full object-cover opacity-80 mix-blend-overlay scale-105 animate-slow-zoom"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/20" />
         </div>
 
         {/* Content */}
@@ -66,15 +66,18 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-6 pt-6">
               <Button 
                 size="lg" 
-                className="rounded-none bg-accent hover:bg-white hover:text-primary text-white font-black text-sm px-12 py-8 uppercase tracking-widest transition-all duration-300"
+                className="rounded-none bg-accent hover:bg-white hover:text-primary text-white font-black text-sm px-12 py-8 uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(var(--accent),0.3)] transition-all duration-500 group relative overflow-hidden"
                 onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Explore Products
+                <span className="relative z-10 flex items-center gap-3">
+                  Explore Products <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="rounded-none border-2 border-white/20 text-white font-black text-sm px-12 py-8 uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-300"
+                className="rounded-none border-2 border-white/40 text-white font-black text-sm px-12 py-8 uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-all duration-500 backdrop-blur-sm"
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Learn More
