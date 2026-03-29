@@ -87,34 +87,63 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About / Vision Section */}
+      {/* About / Vision & Mission Section */}
       <section id="about" className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Vision & Mission</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              To provide high-quality organic fertilizers that enhance soil health and crop productivity, 
-              ensuring sustainable farming for future generations.
-            </p>
+            <span className="text-primary font-semibold tracking-wider uppercase text-sm">Who We Are</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">Our Vision & Mission</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-8 rounded-2xl bg-muted/30 border border-border/50 text-center hover:bg-primary/5 transition-colors duration-300"
-              >
-                <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center text-primary shadow-lg mb-6">
-                  <feature.icon className="w-8 h-8" />
+          <div className="grid md:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
+            {/* Vision */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="p-10 border-l-4 border-primary bg-primary/5"
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 bg-primary flex items-center justify-center text-white shrink-0">
+                  <Sun className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.desc}</p>
-              </motion.div>
-            ))}
+                <h3 className="text-2xl font-black uppercase tracking-tight text-primary">Vision</h3>
+              </div>
+              <p className="text-foreground/80 leading-relaxed text-base">
+                To enhance soil fertility and agricultural productivity by delivering innovative, eco-friendly, and high-quality fertilizer solutions that empower farmers and contribute to sustainable agricultural growth and national development.
+              </p>
+            </motion.div>
+
+            {/* Mission */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="p-10 border-l-4 border-accent bg-accent/5"
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 bg-accent flex items-center justify-center text-white shrink-0">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
+                <h3 className="text-2xl font-black uppercase tracking-tight text-accent">Mission</h3>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "To provide reliable and superior quality fertilizer products to farmers.",
+                  "To promote sustainable and environmentally responsible farming practices.",
+                  "To ensure customer satisfaction through transparency, integrity, and dedicated service.",
+                  "To support farmers with knowledge, guidance, and modern agricultural solutions.",
+                  "To build long-term relationships based on trust, quality, and consistent performance.",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-foreground/80 text-sm leading-relaxed">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
         </div>
       </section>
