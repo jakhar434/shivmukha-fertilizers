@@ -1,28 +1,29 @@
-import { useQuery } from "@tanstack/react-query";
-import { api } from "@shared/routes";
+import type { Product } from "@shared/schema";
+
+const PRODUCTS: Product[] = [
+  { id: 1, name: "Shakti Gold", description: "Tillering Booster", weight: "7kg", image: "/images/prod-01.png" },
+  { id: 2, name: "Samrat", description: "Phosphate Rich Organic Manure (PROM)", weight: "50kg", image: "/images/prod-02.png" },
+  { id: 3, name: "Chetak", description: "CMS Granules - Fertilizer", weight: "50kg", image: "/images/prod-03.png" },
+  { id: 4, name: "Shakti", description: "Potash Derived from Molasses", weight: "50kg", image: "/images/prod-04.png" },
+  { id: 5, name: "Powar Gro-G", description: "Organic Manure - Seaweed Extract Granules", weight: "10kg", image: "/images/prod-05.png" },
+  { id: 6, name: "Trishul", description: "Tillering Booster - Control over borers", weight: "4kg", image: "/images/prod-06.png" },
+  { id: 7, name: "Root Mex", description: "Mycorrhizal Bio Fertilizer", weight: "10kg", image: "/images/prod-07.png" },
+  { id: 8, name: "Powar Gro-L", description: "Eco Friendly Foliar Spray", weight: "1Ltr", image: "/images/prod-09.png" },
+  { id: 9, name: "PSB", description: "Crop Care", weight: "", image: "/images/prod-10.png" },
+];
 
 export function useProducts() {
-  return useQuery({
-    queryKey: [api.products.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.products.list.path);
-      if (!res.ok) throw new Error("Failed to fetch products");
-      return api.products.list.responses[200].parse(await res.json());
-    },
-  });
+  return {
+    data: PRODUCTS,
+    isLoading: false,
+    error: null,
+  };
 }
 
 export function useProduct(id: number) {
-  return useQuery({
-    queryKey: [api.products.get.path, id],
-    queryFn: async () => {
-      // Note: We need to construct the URL manually or use a helper if available
-      // Since buildUrl is in shared/routes, we construct it simply here for the fetch
-      const path = api.products.get.path.replace(':id', id.toString());
-      const res = await fetch(path);
-      if (!res.ok) throw new Error("Failed to fetch product");
-      return api.products.get.responses[200].parse(await res.json());
-    },
-    enabled: !!id,
-  });
+  return {
+    data: PRODUCTS.find((p) => p.id === id),
+    isLoading: false,
+    error: null,
+  };
 }

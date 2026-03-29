@@ -1,13 +1,14 @@
-import { useQuery } from "@tanstack/react-query";
-import { api } from "@shared/routes";
+import type { TeamMember } from "@shared/schema";
+
+const TEAM: TeamMember[] = [
+  { id: 1, name: "Hira Ram", role: "Director", image: "/images/team/hira_ram.jpg" },
+  { id: 2, name: "Ramvilash Jat", role: "Director", image: "/images/team/ramvilash_jat.jpg" },
+];
 
 export function useTeam() {
-  return useQuery({
-    queryKey: [api.team.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.team.list.path);
-      if (!res.ok) throw new Error("Failed to fetch team members");
-      return api.team.list.responses[200].parse(await res.json());
-    },
-  });
+  return {
+    data: TEAM,
+    isLoading: false,
+    error: null,
+  };
 }
