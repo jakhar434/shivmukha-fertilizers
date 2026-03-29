@@ -33,7 +33,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="w-12 h-12 rounded-full bg-white border border-border flex items-center justify-center overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-300">
-              <img src="/images/logo.png" alt="Shivmukha Logo" className="w-10 h-10 object-contain" />
+              <img src="images/logo.png" alt="Shivmukha Logo" className="w-10 h-10 object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="font-display font-black text-2xl leading-none text-primary tracking-tighter uppercase">
