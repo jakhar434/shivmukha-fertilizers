@@ -215,7 +215,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-primary font-semibold tracking-wider uppercase text-sm">Leadership</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Meet Our Directors</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Meet Our Director</h2>
             <p className="text-muted-foreground">
               Guided by experienced leadership dedicated to agricultural innovation and excellence.
             </p>
@@ -228,7 +228,7 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+            <div className="flex justify-center">
               {team?.map((member, index) => (
                 <TeamCard key={member.id} member={member} index={index} />
               ))}
