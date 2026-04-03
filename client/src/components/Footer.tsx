@@ -1,4 +1,4 @@
-import { Leaf, Phone, MapPin, Mail, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Mail, ArrowRight } from "lucide-react";
 
 export function Footer() {
   return (
@@ -7,9 +7,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           {/* Brand Column */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
-                <Leaf className="w-6 h-6" />
+            <div className="flex items-center space-x-3">
+              <div className="w-14 h-14 rounded-full bg-white overflow-hidden flex-shrink-0">
+                <img src="images/logo.png" alt="Shivmukha Logo" className="w-full h-full object-cover object-top scale-110" />
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-xl leading-none text-white">
@@ -26,7 +26,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Quick Links (Visual Only) */}
+          {/* Quick Links */}
           <div className="space-y-6">
             <h4 className="text-white font-display text-lg">Company</h4>
             <ul className="space-y-4">
