@@ -9,7 +9,7 @@ export function Footer() {
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <div className="w-14 h-14 rounded-full bg-white overflow-hidden flex-shrink-0">
-                <img src="images/logo.png" alt="Shivmukha Logo" className="w-full h-full object-cover object-top scale-110" />
+                <img src="images/logo.png" alt="Shivmukha Logo" className="w-full object-cover object-top" style={{ height: '170%' }} />
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-xl leading-none text-white">
