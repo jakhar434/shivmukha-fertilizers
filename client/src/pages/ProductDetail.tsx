@@ -46,7 +46,7 @@ export default function ProductDetail({ id, onBack }: ProductDetailProps) {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white border border-border p-6 sm:p-10 flex items-center justify-center aspect-square md:sticky md:top-28 relative"
+              className="bg-white border border-border p-6 sm:p-10 flex items-center justify-center aspect-square relative"
             >
               <img
                 src={product.image}
