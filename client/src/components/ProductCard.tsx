@@ -5,16 +5,18 @@ import { Sprout, ArrowRight } from "lucide-react";
 interface ProductCardProps {
   product: Product;
   index: number;
+  onClick: () => void;
 }
 
-export function ProductCard({ product, index }: ProductCardProps) {
+export function ProductCard({ product, index, onClick }: ProductCardProps) {
   return (
     <motion.div
+      onClick={onClick}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group bg-card rounded-none overflow-hidden border border-border shadow-none hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
+      className="group bg-card rounded-none overflow-hidden border border-border shadow-none hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 cursor-pointer"
     >
       <div className="aspect-[4/5] bg-white relative overflow-hidden p-8">
         <div className="absolute inset-0 bg-neutral-50/50" />
