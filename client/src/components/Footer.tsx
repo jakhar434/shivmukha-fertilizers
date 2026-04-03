@@ -5,34 +5,32 @@ export function Footer() {
     <footer id="contact" className="bg-foreground text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
-          {/* Brand Column */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <div className="w-14 h-14 rounded-full bg-white overflow-hidden flex-shrink-0">
-                <img src="images/logo.png" alt="Shivmukha Logo" className="w-full object-cover object-top" style={{ height: '170%' }} />
+                <img src="images/logo-emblem.jpg" alt="Shivmukha Logo" className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-xl leading-none text-white">
                   Shivmukha
                 </span>
-                <span className="text-xs text-white/60 font-medium tracking-wider">
-                  BIO FERTILIZERS
+                <span className="text-xs text-white/60 font-medium tracking-wider uppercase">
+                  Bio Fertilizers
                 </span>
               </div>
             </div>
             <p className="text-white/70 leading-relaxed max-w-sm">
-              Enhancing soil health and crop productivity through sustainable, 
+              Enhancing soil health and crop productivity through sustainable,
               high-quality organic solutions. ISO 9001-2015 Certified.
             </p>
           </div>
 
-          {/* Quick Links */}
           <div className="space-y-6">
             <h4 className="text-white font-display text-lg">Company</h4>
             <ul className="space-y-4">
-              {['Home', 'About Us', 'Products', 'Team'].map((item) => (
+              {["Home", "About Us", "Products", "Team"].map((item) => (
                 <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(' ', '')}`} className="text-white/70 hover:text-primary transition-colors flex items-center group">
+                  <a href={`#${item.toLowerCase().replace(" ", "")}`} className="text-white/70 hover:text-primary transition-colors flex items-center group">
                     <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
                     {item}
                   </a>
@@ -41,16 +39,15 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div className="space-y-6">
             <h4 className="text-white font-display text-lg">Contact Us</h4>
             <div className="space-y-4">
               <div className="flex items-start space-x-3 text-white/70">
                 <MapPin className="w-5 h-5 mt-1 text-primary shrink-0" />
                 <p>
-                  Shop No.7, 1st Block, Mansi Market, 
-                  Bhorki Road, Near Government Hospital, 
-                  Gudha Gorji, Todi, Jhunjhunu, 
+                  Shop No.7, 1st Block, Mansi Market,
+                  Bhorki Road, Near Government Hospital,
+                  Gudha Gorji, Todi, Jhunjhunu,
                   Rajasthan, 333022
                 </p>
               </div>
