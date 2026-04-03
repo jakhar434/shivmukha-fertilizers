@@ -8,7 +8,11 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Sprout, ShieldCheck, Sun, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function Home() {
+interface HomeProps {
+  onProductClick: (id: number) => void;
+}
+
+export default function Home({ onProductClick }: HomeProps) {
   const { data: products, isLoading: productsLoading } = useProducts();
   const { data: team, isLoading: teamLoading } = useTeam();
 
@@ -170,7 +174,7 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {products?.map((product, index) => (
-                <ProductCard key={product.id} product={product} index={index} />
+                <ProductCard key={product.id} product={product} index={index} onClick={() => onProductClick(product.id)} />
               ))}
             </div>
           )}
