@@ -29,11 +29,10 @@ export default function ProductDetail({ id, onBack }: ProductDetailProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background font-body">
+    <div className="min-h-screen bg-background" style={{ fontFamily: "var(--app-font-body)" }}>
       <Navbar />
       <div className="pt-28 pb-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back Button */}
           <button
             onClick={onBack}
             className="flex items-center gap-2 text-primary font-black text-sm uppercase tracking-widest mb-10 hover:text-accent transition-colors group"
@@ -42,13 +41,12 @@ export default function ProductDetail({ id, onBack }: ProductDetailProps) {
             Back to Products
           </button>
 
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            {/* Product Image */}
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white border border-border p-10 flex items-center justify-center aspect-square sticky top-28"
+              className="bg-white border border-border p-6 sm:p-10 flex items-center justify-center aspect-square md:sticky md:top-28 relative"
             >
               <img
                 src={product.image}
@@ -62,7 +60,6 @@ export default function ProductDetail({ id, onBack }: ProductDetailProps) {
               )}
             </motion.div>
 
-            {/* Product Info */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
