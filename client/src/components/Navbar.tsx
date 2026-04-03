@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Leaf, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -32,8 +32,8 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 rounded-full bg-white border border-border flex items-center justify-center overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-300">
-              <img src="images/logo.png" alt="Shivmukha Logo" className="w-10 h-10 object-contain" />
+            <div className="w-14 h-14 rounded-full bg-white border border-border overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-300">
+              <img src="images/logo.png" alt="Shivmukha Logo" className="w-full h-full object-cover object-top scale-110" />
             </div>
             <div className="flex flex-col">
               <span className="font-display font-black text-2xl leading-none text-primary tracking-tighter uppercase">
@@ -56,7 +56,7 @@ export function Navbar() {
                 {link.name}
               </button>
             ))}
-            <Button 
+            <Button
               onClick={() => scrollToSection("contact")}
               className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25 rounded-full px-6"
             >
@@ -96,7 +96,7 @@ export function Navbar() {
                 </button>
               ))}
               <div className="pt-4 px-4">
-                <Button 
+                <Button
                   onClick={() => scrollToSection("contact")}
                   className="w-full bg-primary hover:bg-primary/90 rounded-full"
                 >
