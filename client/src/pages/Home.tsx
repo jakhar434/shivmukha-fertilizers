@@ -138,7 +138,7 @@ export default function Home({ onProductClick }: HomeProps) {
             </motion.div>
 
             {/* Feature Badges — staggered slide-up */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 mt-14 max-w-xl">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 mt-14 max-w-xl mx-auto">
               {features.map((f, i) => (
                 <motion.div
                   key={i}
