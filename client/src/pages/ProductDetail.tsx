@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useProducts } from "@/hooks/use-products";
 import { productDetails } from "@/data/product-details";
 import { Navbar } from "@/components/Navbar";
@@ -12,6 +13,10 @@ interface ProductDetailProps {
 }
 
 export default function ProductDetail({ id, onBack }: ProductDetailProps) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [id]);
+
   const { data: products } = useProducts();
   const productId = parseInt(id);
   const product = products?.find((p) => p.id === productId);
