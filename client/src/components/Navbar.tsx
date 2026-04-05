@@ -11,6 +11,7 @@ export function Navbar() {
     { name: "About", href: "about" },
     { name: "Benefits", href: "why-us" },
     { name: "Products", href: "products" },
+    { name: "Events", href: "events" },
   ];
 
   const scrollToSection = (id: string) => {
