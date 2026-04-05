@@ -8,7 +8,7 @@ export function Footer() {
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <div className="w-14 h-14 rounded-full bg-white overflow-hidden flex-shrink-0 flex items-center justify-center">
-                <img src="images/logo-emblem.jpg" alt="Shivmukha Logo" className="w-full h-full object-contain p-0.5" />
+                <img src="images/logo-emblem.jpg" alt="Shivmukha Logo" className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-xl leading-none text-white">
