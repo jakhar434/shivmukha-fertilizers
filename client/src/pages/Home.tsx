@@ -2,7 +2,9 @@ import { useRef, useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
+import { TeamCard } from "@/components/TeamCard";
 import { useProducts } from "@/hooks/use-products";
+import { useTeam } from "@/hooks/use-team";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, CheckCircle2, Sprout, ShieldCheck, Sun, Phone, ChevronDown, Leaf, Users, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -38,6 +40,7 @@ function CountUp({ to, suffix = "" }: { to: number; suffix?: string }) {
 
 export default function Home({ onProductClick }: HomeProps) {
   const { data: products, isLoading: productsLoading } = useProducts();
+  const { data: team } = useTeam();
 
   const features = [
     { icon: Sprout, title: "100% Organic", desc: "Pure natural ingredients" },
@@ -48,7 +51,7 @@ export default function Home({ onProductClick }: HomeProps) {
   const stats = [
     { value: 500, suffix: "+", label: "Farmers Served" },
     { value: 10, suffix: "+", label: "Bio Products" },
-    { value: 5, suffix: "+", label: "Years of Trust" },
+    { value: 10, suffix: "+", label: "Yrs Expertise" },
     { value: 100, suffix: "%", label: "Organic Certified" },
   ];
 
@@ -327,6 +330,24 @@ export default function Home({ onProductClick }: HomeProps) {
         </div>
       </section>
 
+      {/* Directors Section */}
+      <section id="directors" className="py-24 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-primary font-semibold tracking-wider uppercase text-sm">Leadership</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">Meet Our Director</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto text-sm leading-relaxed">
+              With over 10 years of hands-on experience in agriculture and soil science, our founder leads Shivmukha with a deep passion for sustainable farming.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            {team?.map((member, index) => (
+              <TeamCard key={member.id} member={member} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section id="contact" className="py-16 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?w=1600&q=80')] bg-cover bg-center opacity-5 mix-blend-overlay" />
@@ -362,7 +383,7 @@ export default function Home({ onProductClick }: HomeProps) {
               <div className="text-2xl font-black tracking-tight">+91-63671 19368</div>
             </a>
             <a
-              href="https://wa.me/916367119368?text=Hello%2C%20I%20am%20interested%20in%20Shivmukha%20Bio%20Fertilizers."
+              href="https://wa.me/919057236869?text=Hello%2C%20I%20am%20interested%20in%20Shivmukha%20Bio%20Fertilizers."
               target="_blank"
               rel="noopener noreferrer"
               data-testid="link-whatsapp-cta"
@@ -379,7 +400,7 @@ export default function Home({ onProductClick }: HomeProps) {
 
       {/* Floating WhatsApp Button */}
       <motion.a
-        href="https://wa.me/916367119368?text=Hello%2C%20I%20am%20interested%20in%20Shivmukha%20Bio%20Fertilizers."
+        href="https://wa.me/919057236869?text=Hello%2C%20I%20am%20interested%20in%20Shivmukha%20Bio%20Fertilizers."
         target="_blank"
         rel="noopener noreferrer"
         data-testid="link-whatsapp-float"
