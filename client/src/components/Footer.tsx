@@ -7,8 +7,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-14 h-14 rounded-full bg-white overflow-hidden flex-shrink-0">
-                <img src="images/logo-emblem.jpg" alt="Shivmukha Logo" className="w-full h-full object-cover" />
+              <div className="w-14 h-14 rounded-full bg-white overflow-hidden flex-shrink-0 flex items-center justify-center">
+                <img src="images/logo-emblem.jpg" alt="Shivmukha Logo" className="w-full h-full object-contain p-0.5" />
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-xl leading-none text-white">
@@ -28,11 +28,24 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="text-white font-display text-lg">Company</h4>
             <ul className="space-y-4">
-              {["Home", "About Us", "Products", "Team"].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(" ", "")}`} className="text-white/70 hover:text-primary transition-colors flex items-center group">
+              {[
+                { name: "Home", href: "home" },
+                { name: "About Us", href: "about" },
+                { name: "Products", href: "products" },
+              ].map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={`#${item.href}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById(item.href);
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                      else window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className="text-white/70 hover:text-primary transition-colors flex items-center group"
+                  >
                     <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}
