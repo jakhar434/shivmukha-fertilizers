@@ -11,19 +11,20 @@ export function Navbar() {
     { name: "About", href: "about" },
     { name: "Benefits", href: "why-us" },
     { name: "Products", href: "products" },
-    { name: "Team", href: "team" },
   ];
 
   const scrollToSection = (id: string) => {
     setIsOpen(false);
-    if (id === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    setTimeout(() => {
+      if (id === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300);
   };
 
   return (
@@ -32,7 +33,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-20">
           <button onClick={() => scrollToSection("home")} className="flex items-center space-x-3 group">
             <div className="w-14 h-14 rounded-full bg-white border border-border overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
-              <img src="images/logo-emblem.jpg" alt="Shivmukha Logo" className="w-full h-full object-cover" />
+              <img src="images/logo-emblem.jpg" alt="Shivmukha Logo" className="w-full h-full object-contain p-0.5" />
             </div>
             <div className="flex flex-col">
               <span className="font-display font-black text-2xl leading-none text-primary tracking-tighter uppercase">
