@@ -1,9 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
-import { TeamCard } from "@/components/TeamCard";
 import { useProducts } from "@/hooks/use-products";
-import { useTeam } from "@/hooks/use-team";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Sprout, ShieldCheck, Sun, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,7 +12,6 @@ interface HomeProps {
 
 export default function Home({ onProductClick }: HomeProps) {
   const { data: products, isLoading: productsLoading } = useProducts();
-  const { data: team, isLoading: teamLoading } = useTeam();
 
   const features = [
     { icon: Sprout, title: "100% Organic", desc: "Pure natural ingredients" },
@@ -208,36 +205,6 @@ export default function Home({ onProductClick }: HomeProps) {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section id="team" className="py-24 bg-white relative overflow-hidden">
-        {/* Decorative pattern */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-bl-[100px] -z-0" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-primary font-semibold tracking-wider uppercase text-sm">Leadership</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Meet Our Director</h2>
-            <p className="text-muted-foreground">
-              Guided by experienced leadership dedicated to agricultural innovation and excellence.
-            </p>
-          </div>
-
-          {teamLoading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[1, 2, 3].map((n) => (
-                <div key={n} className="h-64 rounded-2xl bg-muted animate-pulse" />
-              ))}
-            </div>
-          ) : (
-            <div className="flex justify-center">
-              {team?.map((member, index) => (
-                <TeamCard key={member.id} member={member} index={index} />
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
