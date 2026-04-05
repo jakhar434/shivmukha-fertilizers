@@ -18,7 +18,10 @@ function App() {
             id={selectedProductId}
             onBack={() => {
               setSelectedProductId(null);
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              setTimeout(() => {
+                const el = document.getElementById("products");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }, 100);
             }}
           />
         ) : (
